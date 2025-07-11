@@ -2,6 +2,7 @@
 ****
 ## Contacts
 Telegram: @Danissimo_ok
+
 ****
 ## Brief information
 I’m currently pursuing a degree in Cybersecurity at the Faculty of Radioengineering and Computer Technologies (RFICT) at Belarusian State University (BSU). My goal is to build a successful career in IT, specializing in security, while connecting with like-minded professionals and expanding my network.
