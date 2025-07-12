@@ -1,1 +1,173 @@
+@font-face {
+  font-family: "Inter";
+  src: url(../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inika";
+  src: url(../fonts/Inika/Inika-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-margin-top: 80px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.conteiner ,
+.contacts ,
+.skills , 
+.education {
+  background-color:  #EDF2EC;
+}
+
+.conteiner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  .navbar {
+    padding: 30px 25px;
+    .naavbar {
+      display: flex;
+      justify-content: space-between;
+    }
+    .nav {
+      display: none;
+    }
+    .logo {
+      font-family: "Inika", sans-serif;
+      font-size: 16px;
+    }
+    .burger-toggle {
+      max-width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      ul {
+        display: flex;
+        gap: 20px;
+        transition: .5s;
+        position: fixed;
+        left: 0;
+        right: 0;
+        background-color: #EDF2EC;
+        padding-top: 100px;
+        z-index: -1;
+        flex-direction: column;
+        text-align: center;
+        top: -100vh;
+        bottom: 100vh;
+        li a {
+          color: #010201;
+          text-decoration: none;
+          font-size: 23px;
+          font-family: "Inika";
+          font-weight: 400;
+        }
+      }
+      label {
+        display: block;
+        position: relative;
+        height: 25px;
+        width: 30px;
+      }
+      label::after,
+      label::before,
+      label span {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: #000000;
+        transition: 0.3s;
+      }
+      label::before {
+        content: "";
+        top: 0;
+      }
+      label::after {
+        content: "";
+        bottom: 0;
+      }
+      label span {
+        top: 11px;
+      }
+    }
+    #burger-toggle {
+      display: none;
+    }
+    .nav-burger {
+      display: none;
+    }
+    #burger-toggle:checked~label::after {
+      transform: rotate(45deg);
+      bottom: 10px;
+    }
+    #burger-toggle:checked~label::before {
+      transform: rotate(-45deg);
+      top: 12px;
+    }
+    #burger-toggle:checked~label span {
+      transform: rotate(-45deg);
+      top: 12px;
+    }
+    #burger-toggle:checked~.nav-burger {
+      top: 87px;
+      bottom: 0;
+      pointer-events: auto;
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
+@media (min-width: 768px) {
+  .conteiner {
+    .navbar {
+      padding: 30px 25px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-content: center;
+      .nav {
+        width: 452px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        right: 25px;
+        top: 40px;
+        .active {
+          color: #E06733;
+        }
+        label {
+          display: none;
+        }
+        a {
+          display: block;
+          font-family: "Inika";
+          color: #000;
+          text-decoration: none;
+          transition: transform 0.2s linear;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+      .burger-toggle {
+        display: none;
+      }
+    }
+  }
+}
