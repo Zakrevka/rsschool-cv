@@ -43,7 +43,7 @@ html {
   left: 0;
   right: 0;
   z-index: 100;
-
+  
   .navbar {
     padding: 30px 25px;
 
@@ -54,11 +54,6 @@ html {
 
     .nav {
       display: none;
-    }
-
-    .logo {
-      font-family: "Inika", sans-serif;
-      font-size: 16px;
     }
 
     .burger-toggle {
@@ -147,7 +142,7 @@ html {
     }
 
     #burger-toggle:checked~.nav-burger {
-      top: 87px;
+      top: 67px;
       bottom: 0;
       pointer-events: auto;
       opacity: 1;
@@ -157,13 +152,14 @@ html {
 
 .contacts {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   padding: 120px 0px 40px;
 
   h1 {
     font-family: "Inter";
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 700;
     color: #717171;
     max-width: 400px;
@@ -178,6 +174,7 @@ html {
     max-width: 350px;
     height: auto;
     border-radius: 100%;
+    padding-top: 30px;
   }
 
   p {
@@ -187,7 +184,7 @@ html {
 
 .information {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .brief_information,
@@ -273,6 +270,14 @@ footer {
       .burger-toggle {
         display: none;
       }
+    }
+  }
+
+ .contacts ,
+ .information {
+    flex-direction: row;
+    h1 {
+      font-size: 50px;
     }
   }
 }
