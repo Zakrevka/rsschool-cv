@@ -1,12 +1,13 @@
 @font-face {
   font-family: "Inter";
-  src: url(../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+  src: url(assets/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
   font-weight: 400;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Inika";
-  src: url(../fonts/Inika/Inika-Regular.ttf);
+  src: url(assets/fonts/Inika/Inika-Regular.ttf);
   font-weight: 400;
   font-style: normal;
 }
@@ -16,16 +17,24 @@
   padding: 0;
   box-sizing: border-box;
   scroll-margin-top: 80px;
+
+  p {
+    font-family: "Inika";
+    font-size: 20px;
+    font-weight: 400;
+    color: #717171;
+  }
 }
+
 html {
   scroll-behavior: smooth;
 }
 
-.conteiner ,
-.contacts ,
-.skills , 
+.conteiner,
+.contacts,
+.skills,
 .education {
-  background-color:  #EDF2EC;
+  background-color: #EDF2EC;
 }
 
 .conteiner {
@@ -34,24 +43,30 @@ html {
   left: 0;
   right: 0;
   z-index: 100;
+
   .navbar {
     padding: 30px 25px;
+
     .naavbar {
       display: flex;
       justify-content: space-between;
     }
+
     .nav {
       display: none;
     }
+
     .logo {
       font-family: "Inika", sans-serif;
       font-size: 16px;
     }
+
     .burger-toggle {
       max-width: 90%;
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       ul {
         display: flex;
         gap: 20px;
@@ -66,6 +81,7 @@ html {
         text-align: center;
         top: -100vh;
         bottom: 100vh;
+
         li a {
           color: #010201;
           text-decoration: none;
@@ -74,12 +90,14 @@ html {
           font-weight: 400;
         }
       }
+
       label {
         display: block;
         position: relative;
         height: 25px;
         width: 30px;
       }
+
       label::after,
       label::before,
       label span {
@@ -89,36 +107,45 @@ html {
         background-color: #000000;
         transition: 0.3s;
       }
+
       label::before {
         content: "";
         top: 0;
       }
+
       label::after {
         content: "";
         bottom: 0;
       }
+
       label span {
         top: 11px;
       }
     }
+
     #burger-toggle {
       display: none;
     }
+
     .nav-burger {
       display: none;
     }
+
     #burger-toggle:checked~label::after {
       transform: rotate(45deg);
       bottom: 10px;
     }
+
     #burger-toggle:checked~label::before {
       transform: rotate(-45deg);
       top: 12px;
     }
+
     #burger-toggle:checked~label span {
       transform: rotate(-45deg);
       top: 12px;
     }
+
     #burger-toggle:checked~.nav-burger {
       top: 87px;
       bottom: 0;
@@ -128,25 +155,103 @@ html {
   }
 }
 
+.contacts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 120px 0px 40px;
 
+  h1 {
+    font-family: "Inter";
+    font-size: 50px;
+    font-weight: 700;
+    color: #717171;
+    max-width: 400px;
+    transition: color 0.2s linear;
 
+    &:hover {
+      color: #E06733;
+    }
+  }
+
+  img {
+    max-width: 350px;
+    height: auto;
+    border-radius: 100%;
+  }
+
+  p {
+    padding-top: 60px;
+  }
+}
+
+.information {
+  display: flex;
+  flex-direction: row;
+}
+
+.brief_information,
+.skills,
+.code_example,
+.education,
+.english_level {
+  padding: 50px;
+  h2 {
+    font-family: "Inter";
+    font-size: 35px;
+    font-weight: 700;
+    color: #717171;
+    max-width: 300px;
+    transition: color 0.2s linear;
+    padding-bottom: 30px;
+    &:hover {
+      color: #E06733;
+    }
+  }
+}
+
+footer {
+  padding: 15px 25px;
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    span {
+      font-family: "Inter";
+      font-size: 20px;
+    }
+    a {
+      display: block;
+      font-family: "Inika";
+      color: #000;
+      text-decoration: none;
+      transition: color 0.2s linear;
+      &:hover {
+        color: #717171;
+      }
+      img {
+        width: 90px;
+      }
+    }
+  }
+}
 
 @media (min-width: 768px) {
   .conteiner {
     .navbar {
-      padding: 30px 25px;
+      padding: 35px 40px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-content: center;
       .nav {
-        width: 452px;
+        width: 55%;
         list-style: none;
         display: flex;
         justify-content: space-between;
         position: absolute;
         right: 25px;
-        top: 40px;
+        top: 25px;
         .active {
           color: #E06733;
         }

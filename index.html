@@ -45,56 +45,144 @@
 
     <main>
         <section class="contacts" id="contacts">
-            <h1>Hello , I'm Danila Zakreuski</h1>
+            <div>
+                <h1>Hello , I'm Danila Zakreuski</h1>
+                <p>Telegram: @Danissimo_ok</p>
+            </div>
             <img src="assets/img/1.jpg" alt="my foto">
-            <p>Telegram: @Danissimo_ok</p>
         </section>
-        <section class="brief_information" id="brief_information">
-            <p>I'm currently pursuing a degree in Cybersecurity at the Faculty of Radioengineering and Computer
-                Technologies (RFICT) at Belarusian State University (BSU). My goal is to build a successful career in
-                IT, specializing in security, while connecting with like-minded professionals and expanding my network.
+        <div class="information">
+            <div>
+                <section class="brief_information" id="brief_information">
+                    <h2>Brief information</h2>
+                    <p>I'm currently pursuing a degree in Cybersecurity at the Faculty of Radioengineering and Computer
+                        Technologies (RFICT) at Belarusian State University (BSU). My goal is to build a successful
+                        career
+                        in
+                        IT, specializing in security, while connecting with like-minded professionals and expanding my
+                        network.
 
-                I consider myself a highly sociable and adaptable person—I enjoy collaborating with others, resolving
-                challenges constructively, and maintaining a positive team dynamic. I’m passionate about continuous
-                learning and aim to master new skills to achieve long-term success in the tech industry.</p>
-        </section>
-        <section class="skills" id="skills">
-            <p>C++ Programming: Understanding of OOP, algorithms, and data structures using Visual Studio
+                        I consider myself a highly sociable and adaptable person—I enjoy collaborating with others,
+                        resolving
+                        challenges constructively, and maintaining a positive team dynamic. I’m passionate about
+                        continuous
+                        learning and aim to master new skills to achieve long-term success in the tech industry.</p>
+                </section>
+                <section class="education" id="education">
+                    <h2>Education</h2>
+                    <p>I am currently studying at BSU
+                        I took BELHARD academy courses</p>
+                </section>
+                <section class="english_level" id="english_level">
+                    <h2>English level</h2>
+                    <p>I would rate my English level as A2-B1 and I also had experience communicating with native speakers</p>
+                </section>
+                <section class="skills" id="skills">
+                    <h2>Skills</h2>
+                    <p>C++ Programming: Understanding of OOP, algorithms, and data structures using Visual Studio
 
-                Web Development (HTML/CSS): Completed courses at BelHard IT Academy; can create responsive layouts with
-                Flexbox/Grid.
+                        Web Development (HTML/CSS): Completed courses at BelHard IT Academy; can create responsive
+                        layouts
+                        with
+                        Flexbox/Grid.
 
-                Networking & Cybersecurity Basics (university coursework).
+                        Networking & Cybersecurity Basics (university coursework).
 
-                English: Intermediate (can read technical documentation).
+                        English: Intermediate (can read technical documentation).
 
-                Development Tools: Proficient in Visual Studio and VS Code.
+                        Development Tools: Proficient in Visual Studio and VS Code.
 
-                Soft Skills:
-                Analytical Thinking
-                Team Collaboration (experience in academic group projects)
-                Fast Learner</p>
-        </section>
-        <section class="code_example" id="code_example">
-            <p></p>
-        </section>
-        <section class="education" id="education">
-            <p>I am currently studying at BSU
-                I took BELHARD academy courses</p>
-        </section>
-        <section class="english_level" id="english_level">
-            <p>I would rate my English level as A2-B1</p>
-        </section>
+                        Soft Skills:
+                        Analytical Thinking
+                        Team Collaboration (experience in academic group projects)
+                        Fast Learner</p>
+                </section>
+            </div>
+            <section class="code_example" id="code_example">
+                <h2>Code example</h2>
+                <pre><code>
+    #include &lt;fstream&gt;
+    #include &lt;iostream&gt;
+    #include &lt;iomanip&gt;
+
+    using namespace std;
+
+    void enter(int* array, int size, ifstream& file) {
+        for (int i = 0; i < size; i++) {
+            file >> array[i];
+        }
+    }
+
+    void print(int* array, int size) {
+        for (int i = 0; i < size; i++) {
+            cout << setw(5) << array[i];
+        }   
+        cout << endl;
+    }   
+
+    void uniun(int* arrayA, int n, int* arrayB, int m) {
+        int amount = 0, i = 0, j = 0;
+        int* answer = new int[n + m];
+
+        while (i < n && j < m) {
+            if (arrayA[i] >= arrayB[j]) {
+                answer[amount++] = arrayB[j++];
+            } else {
+                answer[amount++] = arrayA[i++];
+            }
+        }
+
+        while (i < n) answer[amount++] = arrayA[i++];
+        while (j < m) answer[amount++] = arrayB[j++];
+
+        print(answer, n + m);
+        ofstream answer2("answer.txt");
+        for (int k = 0; k < n + m; k++) {
+            answer2 << answer[k] << ' ';
+        }
+        delete[] answer;
+        answer2.close();
+    }
+
+    int main() {
+        int n = 0, m = 0;
+        cout << "Enter n\n"; cin >> n;
+        cout << "Enter m\n"; cin >> m;
+
+        int* arrayA = new int[n];
+        int* arrayB = new int[m];
+
+        ifstream file("file.txt");
+        if (!file) {
+            cerr << "Ошибка: файл не найден!" << endl;
+            return 1;
+        }
+
+        enter(arrayA, n, file);
+        enter(arrayB, m, file);
+        print(arrayA, n);
+        print(arrayB, m);
+        uniun(arrayA, n, arrayB, m);
+
+        file.close();
+        delete[] arrayA;
+        delete[] arrayB;
+
+        return 0;
+    }
+    </code></pre>
+            </section>
+        </div>
     </main>
 
     <footer>
         <div class="content">
+            <a href="https://github.com/Zakrevka/rsschool-cv">github</a>
             <div class="footer_data">
                 <span>©</span>
                 <span>2025</span>
-                <span>github</span>
             </div>
-            <img src="assets/img/3.png" alt="Instagram">
+            <a href="https://rs.school/courses/javascript-ru"><img src="assets/img/3.png" alt="RS school"></a>
         </div>
     </footer>
 
